@@ -60,6 +60,9 @@
         }
 
         currentAudio = new Audio(`sounds/${soundFile}`);
+        currentAudio.onerror = () => {
+          alert(`Audio file "${soundFile}" failed to load or is not supported.`);
+        };
         currentAudio.play();
       });
     });
